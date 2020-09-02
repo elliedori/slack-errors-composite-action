@@ -1,0 +1,14 @@
+name: 'notify-slack'
+description: 'Notify Slack of build failure'
+inputs:
+  slack-webhook-url:
+    description: 'Your Slack webhook URL'
+    required: true
+    default: ''
+runs:
+  using: "composite"
+  steps:
+    - run: echo "Hello there"
+      shell: bash
+    - run: ${{ github.action_path}}/notify-slack.sh
+      shell: bash

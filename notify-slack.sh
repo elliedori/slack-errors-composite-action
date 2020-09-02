@@ -1,0 +1,1 @@
+curl -X POST -H 'Content-type: application/json' --data '{"text":"Test message from webhook", attachments: [{ "color": "danger", "fields": { "title": "Github Actions”, “value”: “Sample build failure notification" }}]}' ${{ inputs.slack-webhook-url }}
